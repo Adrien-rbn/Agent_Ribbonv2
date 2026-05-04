@@ -246,27 +246,11 @@ def deduplicate_articles(articles: list[dict]) -> list[dict]:
     return list(by_url.values())
 
 
-# ── Execution: always delegates to run_pipeline.py to avoid kernel-state issues ──
-import subprocess as _sp, sys as _sys
-print(f"Running pipeline for {FROM_ISO[:10]} \u2192 {TO_ISO[:10]}\u2026")
-_result = _sp.run([_sys.executable, str(BASE_DIR / "run_pipeline.py")], cwd=str(BASE_DIR))
-if _result.returncode != 0:
-    raise RuntimeError("run_pipeline.py exited with errors — see output above.")
-
-# Load results back into memory for the downstream display cells
-with open(DATA_PROCESSED / f"{ANALYSIS_DATE}_articles.json") as _f:
-    _rows = json.load(_f)
-articles = [
-    {"title": r.get("title",""), "description": "",
-     "url": r.get("url",""), "publishedAt": r.get("published_at",""),
-     "content": r.get("article_text",""), "article_text": r.get("article_text",""),
-     "source": {"id": None, "name": r.get("source_name","")},
-     "extraction_status": r.get("extraction_status",""),
-     "_query_labels": [s for s in r.get("supporting_sources","").split(", ") if s]}
-    for r in _rows
-]
-raw_articles = articles
-print(f"\nLoaded {len(articles)} articles into memory for downstream cells.")
+# Run the fetch
+raw_articles = fetch_articles(QUERIES, FROM_ISO, TO_ISO, NEWSAPI_KEY)
+articles = deduplicate_articles(raw_articles)
+print(f"\nFetched {len(raw_articles)} raw, {len(articles)} unique articles "
+      f"({FROM_ISO[:10]} → {TO_ISO[:10]})")
 
 
 def extract_article_text(url: str, timeout: int = 15) -> tuple[str, str]:
