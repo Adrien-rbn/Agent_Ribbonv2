@@ -70,12 +70,6 @@ logging.basicConfig(
 logger = logging.getLogger("ribbon_news_agent")
 
 print(f"Analysis date (yesterday, UTC): {ANALYSIS_DATE}")
-if not NEWSAPI_KEY:
-    raise RuntimeError(
-        "NEWSAPI_KEY is not set. Create a .env file with:\n"
-        "  NEWSAPI_KEY=your_key_here\n"
-        "Get a free key at https://newsapi.org/register (NewsAPI.ai)"
-    )
 print(f"NewsAPI key present: {bool(NEWSAPI_KEY)}")
 print(f"trafilatura available: {HAS_TRAFILATURA}")
 print(f"Output folders ready: {DATA_RAW}, {DATA_PROCESSED}, {OUTPUTS_DIR}")
@@ -160,158 +154,119 @@ print(f"Allowlist size: {len(SOURCE_ALLOWLIST)} domains")
 
 
 def build_queries(profile: dict) -> list[tuple[str, list[str]]]:
-    """Return a list of (label, [keywords]) pairs for NewsAPI.ai queries.
-
-    Each keyword list is sent as a single OR-query to EventRegistry's
-    POST /api/v1/article/getArticles endpoint.
-    """
+    """Return a list of (label, [keywords]) pairs for NewsAPI.ai queries."""
     queries = []
-
-    # 1. Direct company monitoring
-    # Use specific aliases only — bare "Ribbon" pulls unrelated noise
-    direct_kws = [
-        a for a in profile["aliases"] + profile["tickers"]
-        if a.lower() != "ribbon"
-    ]
+    direct_kws = [a for a in profile["aliases"] + profile["tickers"]
+                  if a.lower() != "ribbon"]
     queries.append(("direct_company", direct_kws))
-
-    # 2. Cloud & Edge segment products
     queries.append(("segment_cloud_and_edge", [
         "session border controller", "SBC", "VoIP", "UCaaS",
         "SIP trunking", "cloud communications", "unified communications",
     ]))
-
-    # 3. IP Optical segment products
     queries.append(("segment_ip_optical", [
         "IP optical", "coherent optics", "DWDM", "packet-optical",
         "optical transport", "optical networking", "400G", "800G",
     ]))
-
-    # 4. Market / customer drivers
     queries.append(("market_drivers", [
         "telecom operator", "mobile operator", "tier-1 carrier",
         "5G deployment", "network modernization", "fiber deployment",
         "capex telecom",
     ]))
-
-    # 5. Competitor monitoring
     queries.append(("competitors", [
         "Cisco networking", "Juniper networks", "Ciena optical",
         "Nokia optical", "Ericsson network", "Mavenir", "Oracle Communications",
     ]))
-
-    # 6. Regulatory / procurement
     queries.append(("regulatory", [
         "FCC", "BEAD program", "rip and replace telecom",
         "Open RAN", "Huawei ban", "ZTE ban",
     ]))
-
     return queries
 
-
-# Preview the queries that will be sent
 QUERIES = build_queries(RIBBON_PROFILE)
 for label, kws in QUERIES:
     print(f"[{label}] {kws[:4]}{'...' if len(kws) > 4 else ''}")
 
 
 def fetch_articles(queries: list[tuple[str, list[str]]],
-                   from_iso: str,
-                   to_iso: str,
-                   api_key: str) -> list[dict]:
-    """Fetch articles from NewsAPI.ai (EventRegistry) for each query bucket.
-
-    Uses POST /api/v1/article/getArticles with keyword OR-matching.
-    Full article body is returned by the API — hydration is skipped for rows
-    where extraction_status == 'ok_from_api'.
-    """
-    # EventRegistry uses YYYY-MM-DD, not full ISO datetimes
-    date_start = from_iso[:10]
-    date_end = to_iso[:10]
-
+                   from_iso: str, to_iso: str, api_key: str) -> list[dict]:
+    """Fetch from NewsAPI.ai (EventRegistry) — POST with keyword OR-matching."""
+    date_start, date_end = from_iso[:10], to_iso[:10]
     all_articles = []
-
     for label, keywords in queries:
         body = {
-            "apiKey": api_key,
-            "keyword": keywords,
-            "keywordOper": "or",
-            "dateStart": date_start,
-            "dateEnd": date_end,
-            "lang": "eng",
-            "articlesCount": 50,
-            "articlesSortBy": "date",
-            "resultType": "articles",
+            "apiKey": api_key, "keyword": keywords, "keywordOper": "or",
+            "dateStart": date_start, "dateEnd": date_end,
+            "lang": "eng", "articlesCount": 50,
+            "articlesSortBy": "date", "resultType": "articles",
         }
         try:
             resp = requests.post(NEWSAPI_ENDPOINT, json=body, timeout=30)
         except requests.exceptions.RequestException as exc:
-            logger.error(f"[{label}] network error: {exc}")
-            continue
-
+            logger.error(f"[{label}] network error: {exc}"); continue
         if resp.status_code == 401:
-            payload = resp.json()
-            raise RuntimeError(
-                f"NewsAPI.ai authentication failed: {payload.get('message', resp.text[:200])}\n"
-                "Set NEWSAPI_KEY in your .env file and re-run from cell 2."
-            )
+            raise RuntimeError(f"NewsAPI.ai auth failed: {resp.json().get('message','')}\n"
+                               "Set NEWSAPI_KEY in .env and re-run.")
         if resp.status_code != 200:
-            logger.warning(f"[{label}] HTTP {resp.status_code}: {resp.text[:200]}")
-            continue
-
+            logger.warning(f"[{label}] HTTP {resp.status_code}: {resp.text[:200]}"); continue
         payload = resp.json()
-        raw_path = DATA_RAW / f"{ANALYSIS_DATE}_{label}.json"
-        raw_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
-
+        (DATA_RAW / f"{ANALYSIS_DATE}_{label}.json").write_text(
+            json.dumps(payload, indent=2, ensure_ascii=False))
         results = (payload.get("articles") or {}).get("results") or []
         for art in results:
             body_text = art.get("body") or ""
-            extraction_status = "ok_from_api" if len(body_text) > 200 else "thin"
-            source = art.get("source") or {}
-            mapped = {
+            src = art.get("source") or {}
+            all_articles.append({
                 "title": art.get("title") or "",
                 "description": body_text[:500],
                 "url": art.get("url") or "",
                 "publishedAt": art.get("dateTimePub") or "",
-                "content": body_text,
-                "article_text": body_text,
-                "source": {"id": None, "name": source.get("title") or ""},
-                "extraction_status": extraction_status,
+                "content": body_text, "article_text": body_text,
+                "source": {"id": None, "name": src.get("title") or ""},
+                "extraction_status": "ok_from_api" if len(body_text) > 200 else "thin",
                 "_query_label": label,
-            }
-            all_articles.append(mapped)
-
-        logger.info(
-            f"[{label}] received {len(results)} articles ({date_start} \u2192 {date_end})"
-        )
+            })
+        logger.info(f"[{label}] {len(results)} articles ({date_start} \u2192 {date_end})")
         time.sleep(0.5)
-
     return all_articles
 
 
 def deduplicate_articles(articles: list[dict]) -> list[dict]:
-    """Deduplicate by URL, merging _query_label values."""
     by_url: dict[str, dict] = {}
     for art in articles:
         url = (art.get("url") or "").strip()
-        if not url:
-            continue
+        if not url: continue
         if url in by_url:
-            existing_labels = by_url[url].get("_query_labels", [])
-            new_label = art.get("_query_label")
-            if new_label and new_label not in existing_labels:
-                existing_labels.append(new_label)
-            by_url[url]["_query_labels"] = existing_labels
+            existing = by_url[url].get("_query_labels", [])
+            lbl = art.get("_query_label")
+            if lbl and lbl not in existing: existing.append(lbl)
+            by_url[url]["_query_labels"] = existing
         else:
             art["_query_labels"] = [art.get("_query_label")]
             by_url[url] = art
     return list(by_url.values())
 
 
-# Run the fetch
-raw_articles = fetch_articles(QUERIES, FROM_ISO, TO_ISO, NEWSAPI_KEY)
-articles = deduplicate_articles(raw_articles)
-print(f"\nFetched {len(raw_articles)} raw, {len(articles)} unique articles ({FROM_ISO[:10]} \u2192 {TO_ISO[:10]})")
+# ── Execution: always delegates to run_pipeline.py to avoid kernel-state issues ──
+import subprocess as _sp, sys as _sys
+print(f"Running pipeline for {FROM_ISO[:10]} \u2192 {TO_ISO[:10]}\u2026")
+_result = _sp.run([_sys.executable, str(BASE_DIR / "run_pipeline.py")], cwd=str(BASE_DIR))
+if _result.returncode != 0:
+    raise RuntimeError("run_pipeline.py exited with errors — see output above.")
+
+# Load results back into memory for the downstream display cells
+with open(DATA_PROCESSED / f"{ANALYSIS_DATE}_articles.json") as _f:
+    _rows = json.load(_f)
+articles = [
+    {"title": r.get("title",""), "description": "",
+     "url": r.get("url",""), "publishedAt": r.get("published_at",""),
+     "content": r.get("article_text",""), "article_text": r.get("article_text",""),
+     "source": {"id": None, "name": r.get("source_name","")},
+     "extraction_status": r.get("extraction_status",""),
+     "_query_labels": [s for s in r.get("supporting_sources","").split(", ") if s]}
+    for r in _rows
+]
+raw_articles = articles
+print(f"\nLoaded {len(articles)} articles into memory for downstream cells.")
 
 
 def extract_article_text(url: str, timeout: int = 15) -> tuple[str, str]:
@@ -370,14 +325,10 @@ def extract_article_text(url: str, timeout: int = 15) -> tuple[str, str]:
 
 
 def hydrate_articles(articles: list[dict]) -> list[dict]:
-    """Add 'article_text' and 'extraction_status' fields to each article.
-
-    Skips articles where extraction_status is already 'ok_from_api'
-    (full body was returned directly by the NewsAPI.ai response).
-    """
+    """Skip rows with extraction_status=ok_from_api (body already from API)."""
     for art in tqdm(articles, desc="Extracting articles"):
         if art.get("extraction_status") == "ok_from_api":
-            continue  # full body already in article_text from API
+            continue
         url = art.get("url")
         if not url:
             art["extraction_status"] = "no_url"

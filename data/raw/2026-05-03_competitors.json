@@ -1,0 +1,149 @@
+{
+  "articles": {
+    "results": [
+      {
+        "uri": "9201908435",
+        "lang": "eng",
+        "isDuplicate": false,
+        "date": "2026-05-03",
+        "time": "01:33:06",
+        "dateTime": "2026-05-03T01:33:06Z",
+        "dateTimePub": "2026-05-03T01:26:35Z",
+        "dataType": "news",
+        "sim": 0,
+        "url": "https://100percentfedup.com/nvidia-elons-strange-space-bet/",
+        "title": "NVIDIA and Elon's Strange Space Bet * 100PercentFedUp.com * by Noah",
+        "body": "(Note: If you want to know which chipmaker could be the next NVIDIA, just ask Jeff Brown. He knows more about AI chips than practically anyone on the planet -- Thanks to his senior executive roles at Qualcomm, Juniper Networks, and NXP Semiconductors...And Jeff just uncovered that one tiny chipmaker -- 148 times smaller than NVIDIA -- is set to provide Musk 5 billion chips in the next two years alone. Click here for the full story or read more below.)",
+        "source": {
+          "uri": "100percentfedup.com",
+          "dataType": "news",
+          "title": "100 Percent Fed Up"
+        },
+        "authors": [],
+        "image": "https://100percentfedup.com/wp-content/uploads/2026/05/brownstone-orbital-ai-1600x900.jpg",
+        "eventUri": null,
+        "sentiment": 0.0980392156862746,
+        "wgt": 515467986,
+        "relevance": 1
+      },
+      {
+        "uri": "9200958208",
+        "lang": "eng",
+        "isDuplicate": false,
+        "date": "2026-05-02",
+        "time": "04:16:16",
+        "dateTime": "2026-05-02T04:16:16Z",
+        "dateTimePub": "2026-05-02T04:15:37Z",
+        "dataType": "news",
+        "sim": 0,
+        "url": "https://townhall.com/columnists/reynold-schweickhardt/2026/05/02/the-social-media-age-is-over-but-america-can-still-lead-on-tech-n2675387",
+        "title": "The Social Media Age Is Over, but America Can Still Lead on Tech",
+        "body": "The opinions expressed by columnists are their own and do not necessarily represent the views of Townhall.com.\n\nIt might sound like a fantasy, but it's closer to reality than you might think. Last year, Australia became the first country to ban social media for minors. The law passed the Australian parliament by an overwhelming margin and was wildly popular among Australian adults.\n\nTaking a cue, the European Union released an app enabling age verification on social platforms, while a handful of European nations are mulling Australia-style bans. The Canadian government is \"very seriously\" considering mandatory age limits, while even here in America, the Massachusetts state house recently voted to ban social media for children under 14.\n\nWe don't know how many of these proposals will become law; we also don't know how effective the Australian experiment will be. But one thing is clear: the age of social media is over. The dream of connecting the world that once catalyzed Silicon Valley has crashed into regulatory stigmas and concerns over harm to children.\n\nTechnology is entering a new era. The United States is well-positioned to lead this next generation of tech, just as it did with social media. But that leadership will have to come not just from Silicon Valley but from Washington policymakers.\n\nDoomsayers have been predicting the death of social media for decades, but this time it appears to be real. Not only are regulators moving in, users are moving on -- time spent on social media platforms peaked in 2022 and has since fallen by nearly 10 percent.\n\nBetween just 2023 and 2024, X lost 33 million users and close to 14 percent of its revenue. Facebook has been declining for years, while even trendy TikTok has seen a dip in the time users spend on its app.\n\nThat China, which operates TikTok, takes extreme measures to keep its own teens off social media, should tell us everything we need to know. Even plugged-in Gen Z has at best a love-hate relationship with these platforms, with nearly half of Zoomers saying they wish TikTok was \"never invented.\"\n\nAll the way back in 2021, Mark Zuckerberg saw which way the wind was blowing and reinvented Facebook as Meta. His virtual reality \"metaverse\" didn't work out as planned, but Meta today has fully pivoted away from social media and into AI.\n\nThis is the new future of tech: artificial intelligence, along with other products like cloud computing and semiconductors. Yet while America dominated the social media age, this new generation is seeing much stiffer global competition.\n\nTake semiconductors, which are vital to everything from smartphones to medical equipment to cars. More than 60 percent of the world's semiconductors and 90 percent of the most sophisticated chips are made in Taiwan.\n\nThe United States invented the semiconductor, yet today we only produce about 10 percent of these vital chips. China produces as much as double that while actively threatening to invade semiconductor-rich Taiwan.\n\nWashington has been working to close this gap with measures like the 2022 CHIPS Act, which provided incentives for domestic semiconductor manufacturing. But the U.S. still lags badly behind. We need a comprehensive strategy if we're to make America a semiconductor leader once again.\n\nLikewise, on AI. The United States does better here, but still faces challenges from an aggressively upstart China. A Stanford report released this month warns that China has \"nearly erased\" America's lead on artificial intelligence while Chinese conglomerate Huawei has become a dominant AI global player.\n\nWashington has made some smart moves here.\n\nFor example, last year, the Trump administration approved a merger between Hewlett Packard Enterprise (HPE) and Juniper Networks, which will create a new American AI powerhouse with the scale and know-how to compete with Huawei.\n\nIn Congress, radical Democrats continue to challenge the Trump administration on the wisdom of this merger. No surprise there - they fight anything that has Trump's rubber stamp on it.\n\nBut as Jack Posobiec has argued when discussing this case, the president's brand of populism recognizes that big - while often bad - isn't always bad. Mergers that benefit consumers and America's national security interests should be seen as a blessing, not a curse. By undercutting Huawei and the Chinese Communist Party's predatory global AI ambitions, this one does both.\n\nWhile this is a great first step, more pro-competitive actions to get the U.S. ahead in the AI race are needed.\n\nBeijing is providing extensive guidance funds for AI developers while stealing U.S. intellectual property. Washington needs to acknowledge that China, in particular, has made AI competition a public-sector matter as well as a private-sector one, and respond accordingly.\n\nAmerica can't become a technology has-been, the country that gave the world hashtags and Facebook friends only to fade from relevancy. Let's recognize we've got stiffer competition this time around and make sure we lead the way.",
+        "source": {
+          "uri": "townhall.com",
+          "dataType": "news",
+          "title": "Townhall"
+        },
+        "authors": [],
+        "image": "https://media.townhall.com/cdn/hodl/2026/121/5d7cd8d7-5cd6-46fc-b581-45d182bd12e1-1200x675.png",
+        "eventUri": null,
+        "sentiment": -0.07450980392156858,
+        "wgt": 515391376,
+        "relevance": 1
+      },
+      {
+        "uri": "2026-05-1157723414",
+        "lang": "eng",
+        "isDuplicate": false,
+        "date": "2026-05-01",
+        "time": "20:25:36",
+        "dateTime": "2026-05-01T20:25:36Z",
+        "dateTimePub": "2026-05-01T20:25:20Z",
+        "dataType": "news",
+        "sim": 0.7058823704719543,
+        "url": "https://adtmag.com/blogs/watersworks/2026/05/oracle-april-patch-update-lands-with-481-security-fixes.aspx",
+        "title": "Oracle's April Patch Update Lands With 481 Security Fixes -- ADTmag",
+        "body": "Oracle's April Patch Update Lands With 481 Security Fixes\n\nOracle has released its April 2026 Critical Patch Update, and it is a big one: 481 new security patches across a wide range of products, including Oracle Database, Fusion Middleware, Java SE, MySQL, E-Business Suite, Enterprise Manager, Financial Services Applications, Communications, and Retail Applications.\n\nAs usual with Oracle's quarterly patch cycle, the update covers both Oracle code and third-party components included in Oracle products. Oracle says the advisories generally describe only the new security fixes added since the previous update, even though the patches themselves are typically cumulative. The company also reiterated its standing warning that attackers continue to target vulnerabilities with existing fixes and urged customers to apply patches without delay.\n\nThe largest batch of fixes is in Oracle Communications, which received 139 new patches. Oracle says 93 of those vulnerabilities may be remotely exploitable without authentication. That means an attacker could potentially exploit them over a network without needing user credentials. Several of the listed issues carry CVSS 3.1 base scores of 9.8, a rating that tends to get security teams' attention quickly.\n\nOracle Financial Services Applications also saw a large number of fixes, with 75 new patches, including 59 that Oracle says may be remotely exploitable without authentication. The affected products include Oracle Financial Services Analytical Applications Infrastructure, Compliance Studio, Customer Screening, Transaction Filtering, FLEXCUBE, and several Oracle Banking products.\n\nAnother major area is Oracle Fusion Middleware, which received 59 new patches. Oracle says 46 of those may be remotely exploitable without authentication. The April update also includes fixes tied to a March 20 security alert involving Oracle Identity Manager and Oracle Web Services Manager, tracked as CVE-2026-21992.\n\nMySQL received 34 new security patches, with three vulnerabilities described as remotely exploitable without authentication. One issue affecting MySQL Enterprise Backup and involving OpenSSL was assigned a CVSS 3.1 base score of 9.8 by Oracle's risk matrix.\n\nThe update also includes 26 patches for Oracle Database Products. The database server itself received eight new fixes, four of which Oracle says may be remotely exploitable without authentication. One patch applies to client-only installations, with Oracle listing CVE-2025-48924 as affecting those deployments.\n\nThere are also fixes for several major enterprise application families. Oracle E-Business Suite received 18 patches, Oracle Retail Applications received 15, and Oracle Enterprise Manager received nine. Oracle notes that products such as E-Business Suite and Enterprise Manager may include Oracle Database and Fusion Middleware components, so customers should also pay attention to related patches.\n\nThe Java SE section includes vulnerabilities affecting Oracle Java SE, Oracle GraalVM for JDK, and Oracle GraalVM Enterprise Edition. Some Java issues are remotely exploitable without authentication, though Oracle's matrix also distinguishes issues that require local access or user interaction.\n\nFor IT and security teams, the practical takeaway is straightforward: this is not a patch cycle to skim. The number of remotely exploitable, unauthenticated vulnerabilities makes prioritization essential, especially for internet-facing systems, middleware, identity tools, communications products, databases, and business-critical applications.\n\nOracle says customers may be able to temporarily reduce risk by blocking the network protocols needed for an attack, but it frames this as a stopgap rather than a substitute for patching. The company's recommendation is clear: apply the fixes as soon as possible.\n\nThe next scheduled Oracle Critical Patch Updates are set for July 21, 2026, October 20, 2026, January 19, 2027, and April 20, 2027.\n\nPosted by John K. Waters on May 1, 2026",
+        "source": {
+          "uri": "adtmag.com",
+          "dataType": "news",
+          "title": "ADTmag"
+        },
+        "authors": [],
+        "image": "https://adtmag.com/-/media/ECG/adtmag/Images/New-ADTmag-Image-Folder/Cracked-Coffee-Cup-with-Bandaid.jpg",
+        "eventUri": "eng-11619618",
+        "sentiment": 0.02745098039215677,
+        "wgt": 515363136,
+        "relevance": 1
+      },
+      {
+        "uri": "2026-05-1157672245",
+        "lang": "eng",
+        "isDuplicate": false,
+        "date": "2026-05-01",
+        "time": "18:49:27",
+        "dateTime": "2026-05-01T18:49:27Z",
+        "dateTimePub": "2026-05-01T18:41:47Z",
+        "dataType": "news",
+        "sim": 0,
+        "url": "https://247wallst.com/investing/2026/05/01/dell-super-micro-or-hpe-which-ai-server-stock-crushed-it-in-april/",
+        "title": "Dell, Super Micro, or HPE: Which AI Server Stock Crushed It in April?",
+        "body": "This post may contain links from our sponsors and affiliates, and Flywheel Publishing may receive compensation for actions taken through them.\n\nThe April scoreboard is in for the three biggest pure plays on artificial intelligence (AI) server hardware, and the spread between first and last is wider than the headline gains suggest. Shares of Dell Technologies (NYSE:DELL | DELL Price Prediction) closed the month up 28%, pulling away from Hewlett Packard Enterprise (NYSE:HPE) at 21% and Super Micro Computer (NASDAQ:SMCI) at 20%.\n\nDell, HPE, and SMCI all rode the same multi-trillion-dollar AI capital expenditure (CapEx) wave, yet each business model translated that tailwind into very different April returns. The reasons say a lot about where the smart money is concentrating right now.\n\nThe year-to-date (YTD) results sharpen the picture. Dell stock is up 67% in 2026, HPE is up 20%, and SMCI sits at -7% despite the April rebound.\n\nDell Takes April With Scale and No Legal Overhang\n\nDell stock rose from $163.64 on March 31 to $208.95 on April 30, its best month of the year. The Q4 FY2026 print from late February still sets the tone, with AI-optimized server revenue hitting $8.95 billion, up 342% year over year (YoY).\n\nManagement's FY2027 outlook calls for AI server revenue near $50 billion, roughly doubling YoY, on top of a $43 billion backlog entering the new fiscal year. Dell paired the report with a 20% dividend hike and a $10 billion buyback authorization increase, both supporting per-share metrics.\n\nRetail sentiment confirmed the institutional shift. r/stocks scored DELL at 68 (bullish) on April 25, a sharp reversal from the bearish 22 reading on April 1. With no legal overhang, hyperscaler request for proposal (RFP) wins on PowerEdge, and PowerStore storage benefiting from the same data buildout, Dell entered May atop the leaderboard.\n\nHPE Earns Second on Juniper and Margin Inflection\n\nHPE stock climbed from $23.81 to $28.77 in April, riding momentum from the March 9 earnings beat. Q1 FY2026 revenue of $9.3 billion grew 18% YoY, with the networking segment surging 152% to $2.71 billion on Juniper Networks integration.\n\nCEO Antonio Neri called it \"one of our most profitable quarters on record,\" declaring the integration ahead of plan. HPE raised full-year non-GAAP earnings per share (EPS) guidance to $2.30 to $2.50, while free cash flow swung to $708 million from negative $877 million a year earlier.\n\nThe catch is HPE's enterprise tilt. Enterprise customers ramp AI deployments more slowly than hyperscalers, and the Cray high-performance computing (HPC) franchise is well-positioned for sovereign AI, but those revenues are lumpy. Strong quarter, slower translation to monthly stock returns.\n\nSMCI Lands Third Despite Pure-Play Status\n\nSuper Micro shares rose from $22.77 to $27.40, a solid gain that still trailed peers. CEO Charles Liang described the company as \"scaling rapidly to support large AI and enterprise deployments,\" and the direct liquid cooling (DLC) franchise remains tightly tied to graphics processing unit (GPU) buildouts.\n\nA major issue may have capped the rally: the Department of Justice (DOJ) overhang and pending shareholder lawsuits continue to compress the multiple. Super Micro's CEO commentary on AI buildout still puts the company at the heart of the cycle, but the legal overhang gates the re-rating.\n\nSMCI stock also entered April recovering from a deeper hole, down 14% over one year. Reddit reflected the whiplash, with sentiment swinging from 12 (very bearish) on April 4 to 62 (bullish) by April 22, before going unclassified after the Oracle news.\n\nWhat to Watch Into May\n\nKeep an eye on hyperscaler CapEx commentary as the largest cloud players report May earnings, since those numbers feed directly into Dell, HPE, and SMCI order books. PowerEdge sell-through and any fresh Dell hyperscaler win could extend the leadership.\n\nFor HPE, the next Juniper integration update and Q2 FY2026 revenue guidance of $9.6 billion to $10 billion set the bar. For SMCI, watch for whether the legal overhang shows signs of resolution, since that's the gating factor for multiple expansion. Through April, Dell wears the crown, and prudent investors may want to size positions accordingly while monitoring the May data.",
+        "source": {
+          "uri": "247wallst.com",
+          "dataType": "news",
+          "title": "24/7 Wall St."
+        },
+        "authors": [
+          {
+            "uri": "david_moadel@247wallst.com",
+            "name": "David Moadel",
+            "type": "author",
+            "isAgency": false
+          }
+        ],
+        "image": "https://247wallst.com/wp-content/uploads/2017/09/thinkstockphotos-178589874.jpg",
+        "eventUri": null,
+        "sentiment": 0.2313725490196079,
+        "wgt": 515357367,
+        "relevance": 1
+      },
+      {
+        "uri": "2026-05-1157449805",
+        "lang": "eng",
+        "isDuplicate": false,
+        "date": "2026-05-01",
+        "time": "13:23:37",
+        "dateTime": "2026-05-01T13:23:37Z",
+        "dateTimePub": "2026-05-01T13:09:12Z",
+        "dataType": "news",
+        "sim": 0.4941176474094391,
+        "url": "https://247wallst.com/investing/2026/05/01/jim-cramer-on-ciena-up-100-is-a-little-bit-too-hot-for-me/",
+        "title": "Jim Cramer on Ciena: \"Up 100% Is a Little Bit Too Hot for Me\"",
+        "body": "This post may contain links from our sponsors and affiliates, and Flywheel Publishing may receive compensation for actions taken through them.\n\nOn the April 29, 2026 episode of Mad Money, a caller named Dave from Illinois asked Jim Cramer and Jeff Marks for a deeper dive on Ciena (NYSE:CIEN | CIEN Price Prediction), noting that \"this stock's performance since the middle of last year has been nothing short of spectacular, up 500%.\" Cramer's answer was a polite pass.\n\n\"No, don't need to get that one,\" Cramer said. \"If it came back down, I mean, in fairness, it went up to $527, come down to $475.\" He then explained the discipline behind the call: \"Dave, it's up 100%. And I do, people talk about this rule of 40 they love. No, no, no, no, no, no. I think up 100% is a little bit too hot for me, so I'm going to have to hold off.\" He also reminisced about owning the stock at the turn of the millennium, saying \"I remember when I bought that thing at the end of 1999, I crushed it.\" The week prior, Cramer had even highlighted Ciena in his \"16 Stocks That Got Away\" segment, crediting CEO Gary Smith for the operational work.\n\nWhy the Stock Got So Hot\n\nCiena is the optical networking name riding the AI infrastructure buildout. Hyperscalers stitching together data centers need ever-fatter pipes. Ciena's WaveLogic 6 Extreme 1.6 Tb/s coherent solution sits squarely in that lane.\n\nThus, it's understandable how Direct Cloud Provider revenue surged 76% year-over-year in Q1 FY2026. It reached 42% of total revenue, and management raised the FY2026 outlook to $5.9 billion to $6.3 billion.\n\nThe fundamentals back the move. Ciena posted Q1 adjusted EPS of $1.35 against a $1.17 estimate, with revenue of $1.427 billion (+33.1% YoY) and adjusted operating margin expanding 560 basis points to 17.9%. CEO Gary Smith pointed to \"unprecedented, broad-based demand as we enable customers to monetize their AI investments.\" The full earnings press release is available via the SEC.\n\nThe Valuation Math Behind \"Too Hot\"\n\nCramer's hesitation tracks with the price action. CIEN is up 103.27% year to date and 605.75% over one year. That validates the caller's framing. The 52-week high of $527.86 and the forward P/E of 104 explain the \"rule of 40\" reference. Even with revenue and margins clearing the bar, the consensus analyst target price sits at $378.11, well below the current quote.\n\nThe risks Cramer didn't enumerate are real. Three customers account for 47.4% of revenue, supply chain constraints already pressured shares post-earnings, and tariff exposure remains. Retail enthusiasm has not cooled either. Reddit's wallstreetbets crowd registered an average sentiment score of 82.4 (very bullish) across April 22-23.\n\nCramer's takeaway is the disciplined version of the bull case. The business is working, the AI thesis is intact, and Gary Smith deserves the credit. Paying up after a double, with a forward multiple north of 100, is a separate decision.\n\nYou should still keep in mind that the data center boom is likely to last for much longer than you think. Hyperscalers are accelerating their spending and no one knows when they may start reducing their spending. Thus, AI companies are looking at swelling backlogs and soaring sales. That said, Cramer likely believes CIEN stock prices in too much of that growth right now.",
+        "source": {
+          "uri": "247wallst.com",
+          "dataType": "news",
+          "title": "24/7 Wall St."
+        },
+        "authors": [
+          {
+            "uri": "omor_ibne_ehsan@247wallst.com",
+            "name": "Omor Ibne Ehsan",
+            "type": "author",
+            "isAgency": false
+          }
+        ],
+        "image": "https://247wallst.com/wp-content/uploads/2024/05/shutterstock-546124540-huge-licensed-1-scaled.jpg",
+        "eventUri": "eng-11614702",
+        "sentiment": 0.0117647058823529,
+        "wgt": 515337817,
+        "relevance": 1
+      }
+    ],
+    "totalResults": 5,
+    "page": 1,
+    "count": 5,
+    "pages": 1
+  }
+}
